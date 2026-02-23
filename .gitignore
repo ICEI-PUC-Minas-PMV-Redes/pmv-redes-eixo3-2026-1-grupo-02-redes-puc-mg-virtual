@@ -1,0 +1,44 @@
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependências
+node_modules/
+vendor/
+packages/
+__pycache__/
+*.pyc
+
+# Binários e compilados
+bin/
+obj/
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+
+# Variáveis de ambiente e credenciais
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.crt
+
+# Logs
+*.log
+logs/
+
+# Arquivos temporários
+tmp/
+temp/
+*.tmp
