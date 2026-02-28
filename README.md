@@ -9,23 +9,21 @@
 
 | Campo | Descrição |
 |-------|-----------|
-| **Turma** | *(Informar a turma)* |
-| **Grupo** | *(Informar o número do grupo)* |
-| **Semestre/Ano** | *(Preencher)* |
+| **Turma** | *Eixo 3 - Projeto: Desenvolvimento de Sistema para Redes de Computadores - Turma 01 - 2026/1* |
+| **Grupo** | *Grupo 02* |
+| **Semestre/Ano** | *2026/1* |
 
 ### Integrantes
 
 | Nome Completo | Matrícula |
 |---------------|-----------|
-| *(Nome 1)* | *(Matrícula)* |
-| *(Nome 2)* | *(Matrícula)* |
-| *(Nome 3)* | *(Matrícula)* |
-| *(Nome 4)* | *(Matrícula)* |
-| *(Nome 5)* | *(Matrícula)* |
+| *José Maria Macedo* | *884262* |
+| *Thaís Hudari Abib* | *(Matrícula)* |
+
 
 ### Orientador(a)
 
-*(Nome do(a) professor(a) orientador(a))*
+*Harison Herman Silva*
 
 ---
 
@@ -33,18 +31,18 @@
 
 | Campo | Descrição |
 |-------|-----------|
-| **Nome da comunidade/organização** | *(Preencher)* |
-| **Tipo** | *(ONG / Escola / Associação / Empresa / Órgão público / Outro)* |
-| **Endereço** | *(Preencher)* |
-| **Responsável pelo contato** | *(Nome e cargo)* |
-| **E-mail de contato** | *(Preencher)* |
-| **Telefone de contato** | *(Preencher)* |
+| **Nome da comunidade/organização** | *Mini Mercado Arthur* |
+| **Tipo** | *Mercado* |
+| **Endereço** | *Rua Isabel Pires de Oliveira, 656, Forquilinhas - São José - SC* |
+| **Responsável pelo contato** | *Liliane Alves - Proprietária* |
+| **E-mail de contato** | *liliane.alves@gmail.com* |
+| **Telefone de contato** | *(48) 9 8467-5879* |
 
 ---
 
 ## 📖 Descrição do Projeto
 
-*(Descreva brevemente o problema identificado na comunidade parceira e a solução proposta pelo grupo. Inclua o contexto da comunidade, as necessidades identificadas relacionadas a redes de computadores e como o sistema desenvolvido pretende atender essas necessidades.)*
+*Local atualmente sem infraestrutura tecnológica, não possuindo Internet, Computador ou qualquer ativo de TI. Sendo necessário contratar um provedor de internet, comprar ao menos um computador que servirá para executar todo o projeto, além de ser o ponto de venda através de algum software disponível no mercado. Por fim, criaremos uma rede Wi-Fi que possibilite aos clientes utilizarem a internet dentro do estabelecimento: Clientes do minimercado chegam e recebem senha estática de Wi-Fi que nunca muda, gerando brechas de segurança.*
 
 ---
 
