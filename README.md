@@ -18,7 +18,7 @@
 | Nome Completo | Matrícula |
 |---------------|-----------|
 | *José Maria Macedo* | *884262* |
-| *Thaís Hudari Abib* | *(Matrícula)* |
+| *Thaís Hudari Abib* | *893697* |
 
 
 ### Orientador(a)
