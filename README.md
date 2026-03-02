@@ -42,7 +42,7 @@
 
 ## 📖 Descrição do Projeto
 
-*Local atualmente sem infraestrutura tecnológica, não possuindo Internet, Computador ou qualquer ativo de TI. Sendo necessário contratar um provedor de internet, comprar ao menos um computador que servirá para executar todo o projeto, além de ser o ponto de venda através de algum software disponível no mercado. Por fim, criaremos uma rede Wi-Fi que possibilite aos clientes utilizarem a internet dentro do estabelecimento: Clientes do minimercado chegam e recebem senha estática de Wi-Fi que nunca muda, gerando brechas de segurança.*
+*Local atualmente sem infraestrutura tecnológica, não possuindo Internet, Computador ou qualquer ativo de TI. Sendo necessário contratar um provedor de internet, comprar ao menos um computador que servirá para executar todo o projeto, além de ser o ponto de venda através de algum software disponível no mercado. Por fim, criaremos uma rede Wi-Fi que possibilite aos clientes utilizarem a internet dentro do estabelecimento: Clientes do minimercado chegam e recebem senha estática de Wi-Fi que nunca muda, gerando brechas de segurança. Documentação mais detalhada em https://sgapucminasbr-my.sharepoint.com/personal/1597397_sga_pucminas_br/_layouts/15/guestaccess.aspx?share=IQB-tmK8O5LMRrDtnBW9kbyoAQVtPD8EKzxS5eITy7n4nKg&e=1Q44VH*
 
 ---
 
