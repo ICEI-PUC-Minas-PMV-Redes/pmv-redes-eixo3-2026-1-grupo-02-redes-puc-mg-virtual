@@ -31,34 +31,22 @@ def main():
     escolha = st.sidebar.selectbox("O que deseja fazer?", menu)
 
     # --- ABA: VER ESTOQUE ---
+    # --- ABA: VER ESTOQUE ---
     if escolha == "📊 Ver Estoque":
         st.subheader("Itens no Estoque")
         
-        # Busca dados no banco e transforma em tabela (DataFrame)
-        df = pd.read_sql_query("SELECT nome as 'Produto', quantidade as 'Qtd', preco_custo as 'Custo (R$)', preco_venda as 'Venda (R$)' FROM produtos", conn)
+        df = pd.read_sql_query("SELECT nome as 'Produto', quantidade as 'Qtd', preco_custo as 'Custo', preco_venda as 'Venda' FROM produtos", conn)
         
         if df.empty:
-            st.info("O estoque está vazio. Comece cadastrando um produto!")
+            st.info("O estoque está vazio.")
         else:
-            # Exibe a tabela na tela
-            st.table(df)
+            # Formatação para exibir como dinheiro (R$ 0,00)
+            df_formatado = df.copy()
+            df_formatado['Custo'] = df_formatado['Custo'].map('R$ {:.2f}'.format)
+            df_formatado['Venda'] = df_formatado['Venda'].map('R$ {:.2f}'.format)
             
-            # Alerta visual se algo estiver acabando (menos de 5 unidades)
-            itens_baixos = df[df['Qtd'] < 5]
-            if not itens_baixos.empty:
-                st.warning(f"⚠️ Atenção: Você tem {len(itens_baixos)} produto(s) com estoque baixo!")
-
-            # Lógica para exportar para Excel
-            output = io.BytesIO()
-            with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-                df.to_excel(writer, index=False, sheet_name='Estoque')
-            
-            st.download_button(
-                label="📥 Baixar Lista para Excel",
-                data=output.getvalue(),
-                file_name="estoque_atualizado.xlsx",
-                mime="application/vnd.ms-excel"
-            )
+            # Exibe a tabela com visual limpo
+            st.table(df_formatado)
 
     # --- ABA: CADASTRAR PRODUTO ---
     elif escolha == "🆕 Cadastrar Produto":
