@@ -1,9 +1,3 @@
----
-
-### 2. `README_CLIENTE.md`
-*Este arquivo deve ser entregue ao dono do mercado. Ele foca no uso diário e no funcionamento do atalho `.bat`.*
-
-```markdown
 # 🛒 Guia de Uso - Sistema de Estoque
 
 Olá! Este é o manual simplificado para usar o seu novo sistema de controle de estoque.
@@ -26,5 +20,4 @@ Para abrir o programa, basta localizar o ícone **"Ligar_Sistema"** na sua área
 * **Não feche a janelinha preta** enquanto estiver usando o sistema, senão ele para de funcionar.
 * **Backup:** Uma vez por semana, é bom copiar o arquivo `estoque_mercado.db` para um Pen Drive por segurança.
 
----
-*Desenvolvido para facilitar o seu dia a dia!*
+
