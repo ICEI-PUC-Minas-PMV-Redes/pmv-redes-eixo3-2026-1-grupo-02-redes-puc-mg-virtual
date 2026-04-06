@@ -1,23 +1,18 @@
-# 🛒 Guia de Uso - Sistema de Estoque
+# 📂 Pasta do Servidor (Back-end)
 
-Olá! Este é o manual simplificado para usar o seu novo sistema de controle de estoque.
+Esta pasta contém o núcleo da aplicação. **Não mova os arquivos desta pasta** sem atualizar os caminhos no arquivo `.bat` do cliente.
 
-## ⚡ Como Ligar o Sistema
-Para abrir o programa, basta localizar o ícone **"Ligar_Sistema"** na sua área de trabalho e dar **dois cliques**. 
-* Uma janela preta irá abrir (não feche ela enquanto estiver usando).
-* O sistema abrirá automaticamente no seu navegador de internet.
+## 📄 Arquivos contidos:
+* **`app.py`**: Código fonte desenvolvido em Python/Streamlit.
+* **`estoque_mercado.db`**: Banco de dados SQLite (gerado automaticamente). **Este arquivo deve ter backup frequente.**
 
-## 📖 Como usar as abas:
+## ⚙️ Manutenção Técnica:
+1.  **Dependências:**
+2.  ```bash
+    pip install streamlit pandas xlsxwriter
+    ```
+3.  **Modificações:** Sempre que alterar o `app.py`, o Streamlit atualizará a interface automaticamente no cliente.
+4.  **Endereço de Rede:** Para que o cliente acesse de outros dispositivos, o servidor deve manter um IP fixo na rede local.
 
-1.  **📊 Ver Estoque:** Aqui você vê tudo o que tem. 
-    * Se um item estiver com menos de 5 unidades, um aviso amarelo aparecerá.
-    * Clique no botão azul **"Baixar Lista para Excel"** para salvar um relatório no seu computador.
-2.  **🆕 Cadastrar Produto:** Use para novos itens. Preencha o nome, quanto pagou (Custo) e por quanto vai vender.
-3.  **🔄 Entrada/Saída:** * Fez uma venda? Selecione o produto e marque **Venda (Saída)**.
-    * Chegou mercadoria nova? Selecione o produto e marque **Compra (Entrada)**.
-
-## ⚠️ Avisos Importantes
-* **Não feche a janelinha preta** enquanto estiver usando o sistema, senão ele para de funcionar.
-* **Backup:** Uma vez por semana, é bom copiar o arquivo `estoque_mercado.db` para um Pen Drive por segurança.
-
-
+---
+> **Atenção:** Se o arquivo `estoque_mercado.db` for deletado, todos os dados de estoque serão perdidos.
