@@ -1,16 +1,17 @@
-# 🛠️ Configuração do Servidor - Controle de Estoque
+# 🛒 Acesso ao Sistema de Estoque
 
-Este documento contém as instruções para preparar o ambiente e rodar a aplicação de estoque.
+Este é o local de acesso para o uso diário do sistema.
 
-## 📋 Pré-requisitos
-Antes de começar, certifique-se de que o **Python 3.x** está instalado no computador.
+## 🚀 Como Iniciar:
+1.  Localize o arquivo **`Ligar_Sistema.bat`**.
+2.  Dê **dois cliques** sobre ele.
+3.  Uma janela preta (terminal) será aberta. **Não a feche**, apenas a minimize.
+4.  O sistema abrirá automaticamente no seu navegador (Google Chrome ou Edge).
 
-## 🚀 Instalação passo a passo
+## 💡 Dicas de Uso:
+* **Vendas:** Sempre registre as saídas na aba "Entrada/Saída" para manter o estoque correto.
+* **Excel:** Use o botão de baixar lista no sistema para conferir os preços fora do computador.
+* **Dificuldades:** Se o sistema não abrir, verifique se o computador principal (servidor) está ligado.
 
-1. **Organização:**
-   Coloque o arquivo `app.py` em uma pasta dedicada (Ex: `C:\SistemaEstoque`).
-
-2. **Instalação das Bibliotecas:**
-   Abra o terminal (CMD ou PowerShell) na pasta do projeto e execute:
-   ```bash
-   pip install streamlit pandas xlsxwriter
+---
+*Manual de apoio para o uso simplificado do Mini Mercado.*
