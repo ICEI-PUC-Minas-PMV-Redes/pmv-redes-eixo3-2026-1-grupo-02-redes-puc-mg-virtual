@@ -91,6 +91,107 @@ O `pyzbar` depende de uma biblioteca do sistema chamada **zbar**. No Windows, el
 
 ---
 
+
+## 🔐 Gerando o certificado SSL
+
+O certificado SSL é necessário para que o sistema funcione via HTTPS na rede local. Ele precisa ser gerado **uma única vez** e está vinculado ao IP desta máquina — por isso o Passo Zero (descobrir o IP) deve ser feito primeiro.
+
+A ferramenta utilizada é o **mkcert**, que gera certificados confiáveis para redes locais de forma simples, sem precisar de conhecimento técnico avançado.
+
+### 1. Instalar o mkcert
+
+1. Acesse: https://github.com/FiloSottile/mkcert/releases
+2. Baixe o arquivo `mkcert-v*-windows-amd64.exe` (a versão mais recente)
+3. Renomeie o arquivo baixado para `mkcert.exe`
+4. Copie o `mkcert.exe` para a pasta do servidor (mesma pasta do `app.py`)
+
+---
+
+### 2. Instalar a autoridade certificadora local
+
+Abra o **Prompt de Comando como Administrador** na pasta do servidor e execute:
+
+```
+mkcert -install
+```
+
+> ✅ Este comando instala uma autoridade certificadora (CA) local no Windows. É necessário apenas uma vez por máquina. Ele faz com que os navegadores desta máquina confiem nos certificados gerados pelo mkcert.
+
+---
+
+### 3. Gerar o certificado para o IP desta máquina
+
+Ainda no **Prompt de Comando**, execute o comando abaixo **substituindo `192.168.15.9` pelo IP real desta máquina** (anotado no Passo Zero):
+
+```
+mkcert 192.168.15.9
+```
+
+Dois arquivos serão criados na pasta:
+
+```
+192.168.15.9.pem       ← certificado
+192.168.15.9-key.pem   ← chave privada
+```
+
+> ⚠️ O nome dos arquivos gerados corresponde exatamente ao IP informado. O `iniciar.bat` usa esse nome para localizar os arquivos — não renomeie.
+
+---
+
+### 4. Confiar no certificado em outros dispositivos (celular, tablet, outro computador)
+
+O `mkcert -install` só instala a confiança na máquina servidora. Para que outros dispositivos não exibam o aviso de "conexão não segura", é necessário instalar a CA do mkcert em cada um deles.
+
+**Localizar o arquivo da CA:**
+
+No Prompt de Comando, execute:
+
+```
+mkcert -CAROOT
+```
+
+Isso mostrará o caminho da pasta onde fica o arquivo `rootCA.pem`. Exemplo:
+
+```
+C:\Users\SeuUsuario\AppData\Local\mkcert
+```
+
+**Instalar em outro computador Windows:**
+
+1. Copie o arquivo `rootCA.pem` para o outro computador (via pendrive ou rede)
+2. Renomeie para `rootCA.crt`
+3. Dê duplo clique → **Instalar certificado**
+4. Escolha **Computador Local** → **Autoridades de Certificação Raiz Confiáveis**
+5. Reinicie o navegador
+
+**Instalar no Android:**
+
+1. Copie o `rootCA.pem` para o celular
+2. Vá em **Configurações → Segurança → Instalar certificado → Certificado CA**
+3. Selecione o arquivo
+
+**Instalar no iPhone/iPad:**
+
+1. Copie o `rootCA.pem` para o dispositivo (via AirDrop ou e-mail)
+2. Abra o arquivo — aparecerá "Perfil baixado"
+3. Vá em **Ajustes → Geral → VPN e Gerenciamento de Dispositivo** e instale o perfil
+4. Vá em **Ajustes → Geral → Sobre → Configurações de Confiança de Certificado** e ative a CA do mkcert
+
+> ℹ️ Se preferir não instalar a CA nos outros dispositivos, o sistema funcionará normalmente — o navegador exibirá um aviso de segurança, mas basta clicar em **Avançado → Continuar** para acessar.
+
+---
+
+### Quando gerar um novo certificado
+
+É necessário gerar um novo certificado se:
+
+- O IP da máquina servidora mudar
+- O certificado atual expirar (validade padrão do mkcert: 10 anos)
+
+Nesse caso, repita os passos 3 e 4 desta seção com o novo IP.
+
+---
+
 ## ▶️ Como iniciar o servidor
 
 O sistema usa **HTTPS com certificado SSL** e precisa ser iniciado com o **IP desta máquina na rede interna** (o mesmo que você anotou no Passo Zero). Os arquivos de certificado (`.pem`) já devem estar na pasta do servidor com o IP no nome.
@@ -182,7 +283,7 @@ O arquivo `estoque_mercado.db` é o único arquivo que precisa de backup. Basta 
 
 ## 🔄 Atualizações do sistema
 
-Sempre que o arquivo `app2.py` for alterado, o Streamlit detecta a mudança automaticamente e exibe um botão **"Rerun"** no navegador. Clique nele para aplicar as atualizações sem reiniciar o servidor.
+Sempre que o arquivo `app.py` for alterado, o Streamlit detecta a mudança automaticamente e exibe um botão **"Rerun"** no navegador. Clique nele para aplicar as atualizações sem reiniciar o servidor.
 
 Se o botão não aparecer, feche e reabra o terminal e execute o servidor novamente.
 
