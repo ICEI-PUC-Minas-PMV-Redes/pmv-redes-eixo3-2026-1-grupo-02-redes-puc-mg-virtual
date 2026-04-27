@@ -205,7 +205,7 @@ O `iniciar.bat` deve conter o seguinte — **substituindo `192.168.15.9` pelo IP
 ```bat
 @echo off
 cd /d %~dp0
-streamlit run app.py ^
+python -m streamlit run app.py ^
   --server.address 0.0.0.0 ^
   --server.port 8501 ^
   --server.sslCertFile ./192.168.15.9.pem ^
