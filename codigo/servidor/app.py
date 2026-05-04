@@ -212,6 +212,24 @@ input::placeholder, textarea::placeholder {
     color: #111111 !important;
 }
 
+/* Dropdown aberto — lista de opções */
+[data-baseweb="popover"],
+[data-baseweb="popover"] *,
+[data-baseweb="menu"],
+[data-baseweb="menu"] *,
+[role="listbox"],
+[role="listbox"] *,
+[role="option"],
+[role="option"] * {
+    background: #ffffff !important;
+    color: #111111 !important;
+}
+[role="option"]:hover,
+[data-baseweb="menu"] li:hover {
+    background: #fff4ed !important;
+    color: #e85d04 !important;
+}
+
 /* Texto dentro do stRadio (opções não selecionadas) */
 .stRadio > div > div > label > div {
     color: #222222 !important;
